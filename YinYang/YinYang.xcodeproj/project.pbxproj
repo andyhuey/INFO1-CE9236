@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49B9CD3E1456390E003F5FAB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B9CD3D1456390E003F5FAB /* UIKit.framework */; };
+		49B9CD401456390E003F5FAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B9CD3F1456390E003F5FAB /* Foundation.framework */; };
+		49B9CD421456390E003F5FAB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B9CD411456390E003F5FAB /* CoreGraphics.framework */; };
+		49B9CD481456390E003F5FAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49B9CD461456390E003F5FAB /* InfoPlist.strings */; };
+		49B9CD4A1456390E003F5FAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B9CD491456390E003F5FAB /* main.m */; };
+		49B9CD4E1456390E003F5FAB /* MyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B9CD4D1456390E003F5FAB /* MyAppDelegate.m */; };
+		49B9CD561456390E003F5FAB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B9CD551456390E003F5FAB /* SenTestingKit.framework */; };
+		49B9CD571456390E003F5FAB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B9CD3D1456390E003F5FAB /* UIKit.framework */; };
+		49B9CD581456390E003F5FAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B9CD3F1456390E003F5FAB /* Foundation.framework */; };
+		49B9CD601456390E003F5FAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49B9CD5E1456390E003F5FAB /* InfoPlist.strings */; };
+		49B9CD631456390E003F5FAB /* YinYangTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B9CD621456390E003F5FAB /* YinYangTests.m */; };
+		49B9CD6E14563ABC003F5FAB /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B9CD6D14563ABC003F5FAB /* View.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49B9CD591456390E003F5FAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49B9CD301456390E003F5FAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49B9CD381456390E003F5FAB;
+			remoteInfo = YinYang;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		49B9CD391456390E003F5FAB /* YinYang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YinYang.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B9CD3D1456390E003F5FAB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		49B9CD3F1456390E003F5FAB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		49B9CD411456390E003F5FAB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		49B9CD451456390E003F5FAB /* YinYang-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YinYang-Info.plist"; sourceTree = "<group>"; };
+		49B9CD471456390E003F5FAB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49B9CD491456390E003F5FAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49B9CD4B1456390E003F5FAB /* YinYang-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YinYang-Prefix.pch"; sourceTree = "<group>"; };
+		49B9CD4C1456390E003F5FAB /* MyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAppDelegate.h; sourceTree = "<group>"; };
+		49B9CD4D1456390E003F5FAB /* MyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAppDelegate.m; sourceTree = "<group>"; };
+		49B9CD541456390E003F5FAB /* YinYangTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YinYangTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B9CD551456390E003F5FAB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		49B9CD5D1456390E003F5FAB /* YinYangTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YinYangTests-Info.plist"; sourceTree = "<group>"; };
+		49B9CD5F1456390E003F5FAB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49B9CD611456390E003F5FAB /* YinYangTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YinYangTests.h; sourceTree = "<group>"; };
+		49B9CD621456390E003F5FAB /* YinYangTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YinYangTests.m; sourceTree = "<group>"; };
+		49B9CD6C14563ABC003F5FAB /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		49B9CD6D14563ABC003F5FAB /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49B9CD361456390E003F5FAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B9CD3E1456390E003F5FAB /* UIKit.framework in Frameworks */,
+				49B9CD401456390E003F5FAB /* Foundation.framework in Frameworks */,
+				49B9CD421456390E003F5FAB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49B9CD501456390E003F5FAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B9CD561456390E003F5FAB /* SenTestingKit.framework in Frameworks */,
+				49B9CD571456390E003F5FAB /* UIKit.framework in Frameworks */,
+				49B9CD581456390E003F5FAB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49B9CD2E1456390E003F5FAB = {
+			isa = PBXGroup;
+			children = (
+				49B9CD431456390E003F5FAB /* YinYang */,
+				49B9CD5B1456390E003F5FAB /* YinYangTests */,
+				49B9CD3C1456390E003F5FAB /* Frameworks */,
+				49B9CD3A1456390E003F5FAB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49B9CD3A1456390E003F5FAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49B9CD391456390E003F5FAB /* YinYang.app */,
+				49B9CD541456390E003F5FAB /* YinYangTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49B9CD3C1456390E003F5FAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49B9CD3D1456390E003F5FAB /* UIKit.framework */,
+				49B9CD3F1456390E003F5FAB /* Foundation.framework */,
+				49B9CD411456390E003F5FAB /* CoreGraphics.framework */,
+				49B9CD551456390E003F5FAB /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49B9CD431456390E003F5FAB /* YinYang */ = {
+			isa = PBXGroup;
+			children = (
+				49B9CD4C1456390E003F5FAB /* MyAppDelegate.h */,
+				49B9CD4D1456390E003F5FAB /* MyAppDelegate.m */,
+				49B9CD441456390E003F5FAB /* Supporting Files */,
+				49B9CD6C14563ABC003F5FAB /* View.h */,
+				49B9CD6D14563ABC003F5FAB /* View.m */,
+			);
+			path = YinYang;
+			sourceTree = "<group>";
+		};
+		49B9CD441456390E003F5FAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49B9CD451456390E003F5FAB /* YinYang-Info.plist */,
+				49B9CD461456390E003F5FAB /* InfoPlist.strings */,
+				49B9CD491456390E003F5FAB /* main.m */,
+				49B9CD4B1456390E003F5FAB /* YinYang-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49B9CD5B1456390E003F5FAB /* YinYangTests */ = {
+			isa = PBXGroup;
+			children = (
+				49B9CD611456390E003F5FAB /* YinYangTests.h */,
+				49B9CD621456390E003F5FAB /* YinYangTests.m */,
+				49B9CD5C1456390E003F5FAB /* Supporting Files */,
+			);
+			path = YinYangTests;
+			sourceTree = "<group>";
+		};
+		49B9CD5C1456390E003F5FAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49B9CD5D1456390E003F5FAB /* YinYangTests-Info.plist */,
+				49B9CD5E1456390E003F5FAB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49B9CD381456390E003F5FAB /* YinYang */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49B9CD661456390E003F5FAB /* Build configuration list for PBXNativeTarget "YinYang" */;
+			buildPhases = (
+				49B9CD351456390E003F5FAB /* Sources */,
+				49B9CD361456390E003F5FAB /* Frameworks */,
+				49B9CD371456390E003F5FAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YinYang;
+			productName = YinYang;
+			productReference = 49B9CD391456390E003F5FAB /* YinYang.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49B9CD531456390E003F5FAB /* YinYangTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49B9CD691456390E003F5FAB /* Build configuration list for PBXNativeTarget "YinYangTests" */;
+			buildPhases = (
+				49B9CD4F1456390E003F5FAB /* Sources */,
+				49B9CD501456390E003F5FAB /* Frameworks */,
+				49B9CD511456390E003F5FAB /* Resources */,
+				49B9CD521456390E003F5FAB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49B9CD5A1456390E003F5FAB /* PBXTargetDependency */,
+			);
+			name = YinYangTests;
+			productName = YinYangTests;
+			productReference = 49B9CD541456390E003F5FAB /* YinYangTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49B9CD301456390E003F5FAB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = EVI;
+			};
+			buildConfigurationList = 49B9CD331456390E003F5FAB /* Build configuration list for PBXProject "YinYang" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 49B9CD2E1456390E003F5FAB;
+			productRefGroup = 49B9CD3A1456390E003F5FAB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49B9CD381456390E003F5FAB /* YinYang */,
+				49B9CD531456390E003F5FAB /* YinYangTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49B9CD371456390E003F5FAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B9CD481456390E003F5FAB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49B9CD511456390E003F5FAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B9CD601456390E003F5FAB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		49B9CD521456390E003F5FAB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49B9CD351456390E003F5FAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B9CD4A1456390E003F5FAB /* main.m in Sources */,
+				49B9CD4E1456390E003F5FAB /* MyAppDelegate.m in Sources */,
+				49B9CD6E14563ABC003F5FAB /* View.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49B9CD4F1456390E003F5FAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B9CD631456390E003F5FAB /* YinYangTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49B9CD5A1456390E003F5FAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49B9CD381456390E003F5FAB /* YinYang */;
+			targetProxy = 49B9CD591456390E003F5FAB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49B9CD461456390E003F5FAB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49B9CD471456390E003F5FAB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		49B9CD5E1456390E003F5FAB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49B9CD5F1456390E003F5FAB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49B9CD641456390E003F5FAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		49B9CD651456390E003F5FAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49B9CD671456390E003F5FAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YinYang/YinYang-Prefix.pch";
+				INFOPLIST_FILE = "YinYang/YinYang-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		49B9CD681456390E003F5FAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YinYang/YinYang-Prefix.pch";
+				INFOPLIST_FILE = "YinYang/YinYang-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		49B9CD6A1456390E003F5FAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YinYang.app/YinYang";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YinYang/YinYang-Prefix.pch";
+				INFOPLIST_FILE = "YinYangTests/YinYangTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		49B9CD6B1456390E003F5FAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YinYang.app/YinYang";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YinYang/YinYang-Prefix.pch";
+				INFOPLIST_FILE = "YinYangTests/YinYangTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49B9CD331456390E003F5FAB /* Build configuration list for PBXProject "YinYang" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49B9CD641456390E003F5FAB /* Debug */,
+				49B9CD651456390E003F5FAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49B9CD661456390E003F5FAB /* Build configuration list for PBXNativeTarget "YinYang" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49B9CD671456390E003F5FAB /* Debug */,
+				49B9CD681456390E003F5FAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		49B9CD691456390E003F5FAB /* Build configuration list for PBXNativeTarget "YinYangTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49B9CD6A1456390E003F5FAB /* Debug */,
+				49B9CD6B1456390E003F5FAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49B9CD301456390E003F5FAB /* Project object */;
+}
