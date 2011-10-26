@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4928B40E1457975400578927 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4928B40B1457975400578927 /* Icon.png */; };
+		4928B40F1457975400578927 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4928B40C1457975400578927 /* Icon@2x.png */; };
+		4928B4121457984F00578927 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4928B4111457984F00578927 /* Icon-72.png */; };
 		49B9CD3E1456390E003F5FAB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B9CD3D1456390E003F5FAB /* UIKit.framework */; };
 		49B9CD401456390E003F5FAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B9CD3F1456390E003F5FAB /* Foundation.framework */; };
 		49B9CD421456390E003F5FAB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B9CD411456390E003F5FAB /* CoreGraphics.framework */; };
@@ -19,6 +22,8 @@
 		49B9CD601456390E003F5FAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49B9CD5E1456390E003F5FAB /* InfoPlist.strings */; };
 		49B9CD631456390E003F5FAB /* YinYangTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B9CD621456390E003F5FAB /* YinYangTests.m */; };
 		49B9CD6E14563ABC003F5FAB /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B9CD6D14563ABC003F5FAB /* View.m */; };
+		49EC228B1458293A00CD3D59 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49EC22891458293A00CD3D59 /* Localizable.strings */; };
+		49EC228D1458294700CD3D59 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49EC22891458293A00CD3D59 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4928B40B1457975400578927 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Icons/Icon.png; sourceTree = "<group>"; };
+		4928B40C1457975400578927 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Icons/Icon@2x.png"; sourceTree = "<group>"; };
+		4928B4111457984F00578927 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Icons/Icon-72.png"; sourceTree = "<group>"; };
 		49B9CD391456390E003F5FAB /* YinYang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YinYang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B9CD3D1456390E003F5FAB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49B9CD3F1456390E003F5FAB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,6 +58,8 @@
 		49B9CD621456390E003F5FAB /* YinYangTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YinYangTests.m; sourceTree = "<group>"; };
 		49B9CD6C14563ABC003F5FAB /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
 		49B9CD6D14563ABC003F5FAB /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
+		49EC228A1458293A00CD3D59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49EC228C1458294700CD3D59 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +119,9 @@
 		49B9CD431456390E003F5FAB /* YinYang */ = {
 			isa = PBXGroup;
 			children = (
+				4928B40B1457975400578927 /* Icon.png */,
+				4928B40C1457975400578927 /* Icon@2x.png */,
+				4928B4111457984F00578927 /* Icon-72.png */,
 				49B9CD4C1456390E003F5FAB /* MyAppDelegate.h */,
 				49B9CD4D1456390E003F5FAB /* MyAppDelegate.m */,
 				49B9CD441456390E003F5FAB /* Supporting Files */,
@@ -121,6 +134,7 @@
 		49B9CD441456390E003F5FAB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49EC22891458293A00CD3D59 /* Localizable.strings */,
 				49B9CD451456390E003F5FAB /* YinYang-Info.plist */,
 				49B9CD461456390E003F5FAB /* InfoPlist.strings */,
 				49B9CD491456390E003F5FAB /* main.m */,
@@ -202,6 +216,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				th,
 			);
 			mainGroup = 49B9CD2E1456390E003F5FAB;
 			productRefGroup = 49B9CD3A1456390E003F5FAB /* Products */;
@@ -220,6 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B9CD481456390E003F5FAB /* InfoPlist.strings in Resources */,
+				4928B40E1457975400578927 /* Icon.png in Resources */,
+				4928B40F1457975400578927 /* Icon@2x.png in Resources */,
+				4928B4121457984F00578927 /* Icon-72.png in Resources */,
+				49EC228B1458293A00CD3D59 /* Localizable.strings in Resources */,
+				49EC228D1458294700CD3D59 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +313,15 @@
 				49B9CD5F1456390E003F5FAB /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		49EC22891458293A00CD3D59 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49EC228A1458293A00CD3D59 /* en */,
+				49EC228C1458294700CD3D59 /* th */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -418,6 +447,7 @@
 				49B9CD681456390E003F5FAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49B9CD691456390E003F5FAB /* Build configuration list for PBXNativeTarget "YinYangTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +456,7 @@
 				49B9CD6B1456390E003F5FAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

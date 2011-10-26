@@ -33,6 +33,13 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
+    CGFloat w = rect.size.width;
+    CGFloat h = rect.size.height;
+    UIFont *font = [UIFont systemFontOfSize: 32.0];
+    NSString *s = NSLocalizedString(@"YinYang", "Yin & Yang");
+    CGPoint point = CGPointMake(-w/2, -h/2);
+    [s drawAtPoint: point withFont: font];
+
     CGRect b = self.bounds;
     CGFloat r = .45 * b.size.width;	//radius, in pixels
     
@@ -58,8 +65,12 @@
     CGContextClosePath(c);                  //back to starting point
     //CGContextSetRGBStrokeColor(c, 0, 0, 0, 1);
     //CGContextStrokePath(c);
+    CGContextSaveGState(c);     // save state before shadow
+    CGSize shadow = CGSizeMake(10, 10);
+    CGContextSetShadow(c, shadow, 5);
 	CGContextSetRGBFillColor(c, 0.0, 0.0, 0.0, 1.0);
 	CGContextFillPath(c);
+    CGContextRestoreGState(c);  // turn off the shadow, hopefully
     
     // draw a smaller white circle @ the top
     CGFloat r2 = r / 2;   
