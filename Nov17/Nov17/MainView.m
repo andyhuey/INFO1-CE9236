@@ -15,72 +15,176 @@ double Y(double t, double A, double B, double C);
 long GCD(long a, long b);
 long LCM(long a, long b);
 
+-(void)initSliders
+{
+    CGRect b = self.bounds;
+    CGSize s = CGSizeMake(200, 16);        
+    
+    CGRect f = CGRectMake(b.size.width/2-100, 0, s.width,s.height);
+    slider_A = [[UISlider alloc] initWithFrame: f];
+    slider_A.minimumValue = 1;
+    slider_A.maximumValue = 140;
+    slider_A.value = A;
+    slider_A.continuous = NO;
+    [slider_A addTarget:self
+                 action: @selector(sliderValueChanged:)
+       forControlEvents: UIControlEventValueChanged
+     ];
+    [self addSubview: slider_A];
+    
+    f = CGRectMake(b.size.width/2-100, 25, s.width,s.height);
+    slider_B = [[UISlider alloc] initWithFrame: f];
+    slider_B.minimumValue = 1;
+    slider_B.maximumValue = 140;
+    slider_B.value = B;
+    slider_B.continuous = NO;
+    [slider_B addTarget:self
+                 action: @selector(sliderValueChanged:)
+       forControlEvents: UIControlEventValueChanged
+     ];
+    [self addSubview: slider_B];
+    
+    f = CGRectMake(b.size.width/2-100, 50, s.width,s.height);
+    slider_C = [[UISlider alloc] initWithFrame: f];
+    slider_C.minimumValue = 1;
+    slider_C.maximumValue = 140;
+    slider_C.value = C;
+    slider_C.continuous = NO;
+    [slider_C addTarget:self
+                 action: @selector(sliderValueChanged:)
+       forControlEvents: UIControlEventValueChanged
+     ];
+    [self addSubview: slider_C];
+}
+
+-(void)initSteppers
+{
+    //CGRect b = self.bounds;
+    CGSize s = CGSizeMake(80, 16);        
+    
+    CGRect f = CGRectMake(60, 0, s.width,s.height);
+    stepper_A = [[UIStepper alloc] initWithFrame: f];
+    stepper_A.minimumValue = 1;
+    stepper_A.maximumValue = 140;
+    stepper_A.value = A;
+    stepper_A.continuous = NO;
+    [stepper_A addTarget:self
+                 action: @selector(stepperValueChanged:)
+       forControlEvents: UIControlEventValueChanged
+     ];
+    [self addSubview: stepper_A];
+    
+    f = CGRectMake(60, 25, s.width,s.height);
+    stepper_B = [[UIStepper alloc] initWithFrame: f];
+    stepper_B.minimumValue = 1;
+    stepper_B.maximumValue = 140;
+    stepper_B.value = B;
+    stepper_B.continuous = NO;
+    [stepper_B addTarget:self
+                  action: @selector(stepperValueChanged:)
+        forControlEvents: UIControlEventValueChanged
+     ];
+    [self addSubview: stepper_B];
+
+    f = CGRectMake(60, 50, s.width,s.height);
+    stepper_C = [[UIStepper alloc] initWithFrame: f];
+    stepper_C.minimumValue = 1;
+    stepper_C.maximumValue = 140;
+    stepper_C.value = C;
+    stepper_C.continuous = NO;
+    [stepper_C addTarget:self
+                  action: @selector(stepperValueChanged:)
+        forControlEvents: UIControlEventValueChanged
+     ];
+    [self addSubview: stepper_C];
+}
+
+-(void)initBtn {
+    btnToggleCtrls = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+    CGRect b = self.bounds;
+    CGSize s = CGSizeMake(180, 30);	//size of button
+    
+    btnToggleCtrls.frame = CGRectMake(
+                                      (b.size.width - s.width) / 2,
+                                      (b.size.height - s.height - 10),
+                                      s.width,
+                                      s.height
+                                      );
+    [btnToggleCtrls setTitle: @"Toggle Controls" forState: UIControlStateNormal];
+    
+    [btnToggleCtrls addTarget: self
+                       action: @selector(btnToggleCtrlsClick:)
+             forControlEvents: UIControlEventTouchUpInside
+     ];        
+    [self addSubview: btnToggleCtrls];
+}
+
+- (void)toggleCtrlVisibility {
+    [slider_A setHidden:!showSliders];
+    [slider_B setHidden:!showSliders];
+    [slider_C setHidden:!showSliders];
+    
+    [stepper_A setHidden:showSliders];
+    [stepper_B setHidden:showSliders];
+    [stepper_C setHidden:showSliders];
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor whiteColor];
+        showSliders = YES;
         A = 80;
         B = 14;
         C = 30;
-
-        CGRect b = self.bounds;
-		CGSize s = CGSizeMake(200, 16);        
-
-		CGRect f = CGRectMake(b.size.width/2-100, 0, s.width,s.height);
-		slider_A = [[UISlider alloc] initWithFrame: f];
-		slider_A.minimumValue = 1;
-		slider_A.maximumValue = 140;
-		slider_A.value = A;
-        [slider_A addTarget:self
-                   action: @selector(valueChanged:)
-         forControlEvents: UIControlEventValueChanged
-         ];
-        [self addSubview: slider_A];
-
-        f = CGRectMake(b.size.width/2-100, 25, s.width,s.height);
-		slider_B = [[UISlider alloc] initWithFrame: f];
-		slider_B.minimumValue = 1;
-		slider_B.maximumValue = 140;
-		slider_B.value = B;
-        [slider_B addTarget:self
-                     action: @selector(valueChanged:)
-           forControlEvents: UIControlEventValueChanged
-         ];
-        [self addSubview: slider_B];
-    
-        f = CGRectMake(b.size.width/2-100, 50, s.width,s.height);
-		slider_C = [[UISlider alloc] initWithFrame: f];
-		slider_C.minimumValue = 1;
-		slider_C.maximumValue = 140;
-		slider_C.value = C;
-        [slider_C addTarget:self
-                     action: @selector(valueChanged:)
-           forControlEvents: UIControlEventValueChanged
-         ];
-        [self addSubview: slider_C];
+        
+        [self initBtn];
+        [self initSliders];
+        [self initSteppers];
+        [self toggleCtrlVisibility];
     }
     return self;
 }
 
-- (void) valueChanged: (id) sender {
+- (void) btnToggleCtrlsClick: (id) sender {
+    showSliders = !showSliders;
+    [self toggleCtrlVisibility];
+}
+
+- (void) sliderValueChanged: (id) sender {
 	UISlider *s = sender;
     if (s == slider_A) {
         A = s.value;
+        stepper_A.value = A;
     } else if (s == slider_B) {
         B = s.value;
+        stepper_B.value = B;
     } else if (s == slider_C) {
         C = s.value;
-    }
+        stepper_C.value = C;
+    }  
     [self setNeedsDisplay];
 }
 
-- (void)drawRect:(CGRect)rect
+- (void) stepperValueChanged: (id) sender {
+	UIStepper *s = sender;
+    if (s == stepper_A) {
+        A = s.value;
+        slider_A.value = A;
+    } else if (s == stepper_B) {
+        B = s.value;
+        slider_B.value = B;
+    } else if (s == stepper_C) {
+        C = s.value;
+        slider_C.value = C;
+    }  
+    [self setNeedsDisplay];
+}
+
+-(void)drawValues
 {
-    // Drawing code
-    // ref: http://blog.csharphelper.com/2010/01/18/draw-a-hypotrochoid-spirograph-curve-in-c.aspx
-    
     UIFont *font = [UIFont systemFontOfSize: 20.0];
     NSString *s = [NSString stringWithFormat:@"A=%d", A];
     CGPoint point = CGPointMake(0, 0);
@@ -89,12 +193,18 @@ long LCM(long a, long b);
     s = [NSString stringWithFormat:@"B=%d", B];
     point = CGPointMake(0, 25);
     [s drawAtPoint: point withFont: font];
-
+    
     s = [NSString stringWithFormat:@"C=%d", C];
     point = CGPointMake(0, 50);
     [s drawAtPoint: point withFont: font];
+}
 
-    // Drawing code
+- (void)drawRect:(CGRect)rect
+{
+    // ref: http://blog.csharphelper.com/2010/01/18/draw-a-hypotrochoid-spirograph-curve-in-c.aspx
+    
+    [self drawValues];
+    
     CGFloat w = rect.size.width;
     CGFloat h = rect.size.height;
     NSLog(@"width = %f", w);      // 320
