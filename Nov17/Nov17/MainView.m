@@ -24,8 +24,56 @@ long LCM(long a, long b);
         A = 80;
         B = 14;
         C = 30;
+
+        CGRect b = self.bounds;
+		CGSize s = CGSizeMake(200, 16);        
+
+		CGRect f = CGRectMake(b.size.width/2-100, 0, s.width,s.height);
+		slider_A = [[UISlider alloc] initWithFrame: f];
+		slider_A.minimumValue = 1;
+		slider_A.maximumValue = 140;
+		slider_A.value = A;
+        [slider_A addTarget:self
+                   action: @selector(valueChanged:)
+         forControlEvents: UIControlEventValueChanged
+         ];
+        [self addSubview: slider_A];
+
+        f = CGRectMake(b.size.width/2-100, 25, s.width,s.height);
+		slider_B = [[UISlider alloc] initWithFrame: f];
+		slider_B.minimumValue = 1;
+		slider_B.maximumValue = 140;
+		slider_B.value = B;
+        [slider_B addTarget:self
+                     action: @selector(valueChanged:)
+           forControlEvents: UIControlEventValueChanged
+         ];
+        [self addSubview: slider_B];
+    
+        f = CGRectMake(b.size.width/2-100, 50, s.width,s.height);
+		slider_C = [[UISlider alloc] initWithFrame: f];
+		slider_C.minimumValue = 1;
+		slider_C.maximumValue = 140;
+		slider_C.value = C;
+        [slider_C addTarget:self
+                     action: @selector(valueChanged:)
+           forControlEvents: UIControlEventValueChanged
+         ];
+        [self addSubview: slider_C];
     }
     return self;
+}
+
+- (void) valueChanged: (id) sender {
+	UISlider *s = sender;
+    if (s == slider_A) {
+        A = s.value;
+    } else if (s == slider_B) {
+        B = s.value;
+    } else if (s == slider_C) {
+        C = s.value;
+    }
+    [self setNeedsDisplay];
 }
 
 - (void)drawRect:(CGRect)rect
@@ -34,19 +82,24 @@ long LCM(long a, long b);
     // ref: http://blog.csharphelper.com/2010/01/18/draw-a-hypotrochoid-spirograph-curve-in-c.aspx
     
     UIFont *font = [UIFont systemFontOfSize: 20.0];
-    NSString *s = [NSString stringWithFormat:@"A=%d B=%d C=%d", A, B, C];
+    NSString *s = [NSString stringWithFormat:@"A=%d", A];
     CGPoint point = CGPointMake(0, 0);
-    [s drawAtPoint: point withFont: font]; 
+    [s drawAtPoint: point withFont: font];
     
+    s = [NSString stringWithFormat:@"B=%d", B];
+    point = CGPointMake(0, 25);
+    [s drawAtPoint: point withFont: font];
+
+    s = [NSString stringWithFormat:@"C=%d", C];
+    point = CGPointMake(0, 50);
+    [s drawAtPoint: point withFont: font];
+
     // Drawing code
     CGFloat w = rect.size.width;
     CGFloat h = rect.size.height;
     NSLog(@"width = %f", w);      // 320
     NSLog(@"height = %f", h);    // 460
     
-    //A = 80;
-    //B = 14;
-    //C = 30;
     int iter = 100;
     
     CGContextRef c = UIGraphicsGetCurrentContext();
@@ -55,7 +108,7 @@ long LCM(long a, long b);
     CGContextBeginPath(c);
     
     int cx = w / 2;
-    int cy = (h / 2) + 60;
+    int cy = (h / 2) + 25;
     double t = 0;
     double dt = M_PI / iter;
     double max_t = 2 * M_PI * B / GCD(A, B);

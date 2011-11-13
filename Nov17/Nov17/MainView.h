@@ -10,6 +10,7 @@
 
 @interface MainView : UIView {
     int A, B, C;
+    UISlider *slider_A, *slider_B, *slider_C;
 }
 
 @end
