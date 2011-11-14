@@ -19,6 +19,7 @@
 		4943222814704C00001097E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4943222614704C00001097E4 /* InfoPlist.strings */; };
 		4943222B14704C00001097E4 /* Nov17Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4943222A14704C00001097E4 /* Nov17Tests.m */; };
 		4943223A14704D70001097E4 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4943223914704D70001097E4 /* MainView.m */; };
+		4954E4DD147096F100B6C1AB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4954E4DC147096F100B6C1AB /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		4943222A14704C00001097E4 /* Nov17Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Nov17Tests.m; sourceTree = "<group>"; };
 		4943223814704D70001097E4 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		4943223914704D70001097E4 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		4954E4DC147096F100B6C1AB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		494321F614704BFF001097E4 = {
 			isa = PBXGroup;
 			children = (
+				4954E4DC147096F100B6C1AB /* Icon.png */,
 				4943220B14704BFF001097E4 /* Nov17 */,
 				4943222314704C00001097E4 /* Nov17Tests */,
 				4943220414704BFF001097E4 /* Frameworks */,
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4943221014704BFF001097E4 /* InfoPlist.strings in Resources */,
+				4954E4DD147096F100B6C1AB /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +422,7 @@
 				4943223014704C00001097E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4943223114704C00001097E4 /* Build configuration list for PBXNativeTarget "Nov17Tests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +431,7 @@
 				4943223314704C00001097E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
