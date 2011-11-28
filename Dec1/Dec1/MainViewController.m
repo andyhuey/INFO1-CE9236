@@ -7,8 +7,14 @@
 //
 
 #import "MainViewController.h"
+#import "MainView.h"
+//#import "GridView.h"
 
 @implementation MainViewController
+
+-(void)StartLife {
+    // TODO: stuff
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,12 +35,16 @@
 
 #pragma mark - View lifecycle
 
-/*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
+    CGRect frame = [UIScreen mainScreen].applicationFrame;
+    MainView *myMainView = [[MainView alloc] initWithFrame: frame];
+	self.view = myMainView;    
+    self.view.backgroundColor = [UIColor whiteColor];
+    [myMainView initBtnRun];
+
 }
-*/
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

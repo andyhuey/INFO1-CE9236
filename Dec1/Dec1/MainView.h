@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MainViewController;
 
-@interface MainView : UIView
+@interface MainView : UIView {
+    MainViewController *mainViewController;
+    UIButton *btnRun;
+}
+
+-(void)initBtnRun;
+- (id) initWithFrame: (CGRect) frame controller: (MainViewController *) c;
 
 @end

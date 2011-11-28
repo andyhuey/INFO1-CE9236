@@ -18,6 +18,9 @@
 		49E57ABF1483122A00C03E9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E57AA61483122A00C03E9E /* Foundation.framework */; };
 		49E57AC71483122A00C03E9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49E57AC51483122A00C03E9E /* InfoPlist.strings */; };
 		49E57ACA1483122A00C03E9E /* Dec1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E57AC91483122A00C03E9E /* Dec1Tests.m */; };
+		49E57AD51483128500C03E9E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E57AD41483128500C03E9E /* MainViewController.m */; };
+		49E57AD8148312A200C03E9E /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E57AD7148312A200C03E9E /* MainView.m */; };
+		49E57ADE148312F400C03E9E /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E57ADD148312F400C03E9E /* GridView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +38,24 @@
 		49E57AA41483122A00C03E9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49E57AA61483122A00C03E9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		49E57AA81483122A00C03E9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		49E57AAC1483122A00C03E9E /* Dec1-Info.plist */ = {isa = PBXFileReference; path = "Dec1-Info.plist"; sourceTree = "<group>"; };
+		49E57AAC1483122A00C03E9E /* Dec1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dec1-Info.plist"; sourceTree = "<group>"; };
 		49E57AAE1483122A00C03E9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49E57AB01483122A00C03E9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		49E57AB21483122A00C03E9E /* Dec1-Prefix.pch */ = {isa = PBXFileReference; path = "Dec1-Prefix.pch"; sourceTree = "<group>"; };
-		49E57AB31483122A00C03E9E /* MyAppDelegate.h */ = {isa = PBXFileReference; path = MyAppDelegate.h; sourceTree = "<group>"; };
+		49E57AB21483122A00C03E9E /* Dec1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dec1-Prefix.pch"; sourceTree = "<group>"; };
+		49E57AB31483122A00C03E9E /* MyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAppDelegate.h; sourceTree = "<group>"; };
 		49E57AB41483122A00C03E9E /* MyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAppDelegate.m; sourceTree = "<group>"; };
 		49E57ABB1483122A00C03E9E /* Dec1Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Dec1Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E57ABC1483122A00C03E9E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		49E57AC41483122A00C03E9E /* Dec1Tests-Info.plist */ = {isa = PBXFileReference; path = "Dec1Tests-Info.plist"; sourceTree = "<group>"; };
+		49E57AC41483122A00C03E9E /* Dec1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dec1Tests-Info.plist"; sourceTree = "<group>"; };
 		49E57AC61483122A00C03E9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		49E57AC81483122A00C03E9E /* Dec1Tests.h */ = {isa = PBXFileReference; path = Dec1Tests.h; sourceTree = "<group>"; };
+		49E57AC81483122A00C03E9E /* Dec1Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dec1Tests.h; sourceTree = "<group>"; };
 		49E57AC91483122A00C03E9E /* Dec1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dec1Tests.m; sourceTree = "<group>"; };
+		49E57AD31483128500C03E9E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		49E57AD41483128500C03E9E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		49E57AD6148312A200C03E9E /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		49E57AD7148312A200C03E9E /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		49E57ADC148312F400C03E9E /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
+		49E57ADD148312F400C03E9E /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +115,15 @@
 		49E57AAA1483122A00C03E9E /* Dec1 */ = {
 			isa = PBXGroup;
 			children = (
+				49E57AAB1483122A00C03E9E /* Supporting Files */,
 				49E57AB31483122A00C03E9E /* MyAppDelegate.h */,
 				49E57AB41483122A00C03E9E /* MyAppDelegate.m */,
-				49E57AAB1483122A00C03E9E /* Supporting Files */,
+				49E57AD31483128500C03E9E /* MainViewController.h */,
+				49E57AD41483128500C03E9E /* MainViewController.m */,
+				49E57AD6148312A200C03E9E /* MainView.h */,
+				49E57AD7148312A200C03E9E /* MainView.m */,
+				49E57ADC148312F400C03E9E /* GridView.h */,
+				49E57ADD148312F400C03E9E /* GridView.m */,
 			);
 			path = Dec1;
 			sourceTree = "<group>";
@@ -251,6 +266,9 @@
 			files = (
 				49E57AB11483122A00C03E9E /* main.m in Sources */,
 				49E57AB51483122A00C03E9E /* MyAppDelegate.m in Sources */,
+				49E57AD51483128500C03E9E /* MainViewController.m in Sources */,
+				49E57AD8148312A200C03E9E /* MainView.m in Sources */,
+				49E57ADE148312F400C03E9E /* GridView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

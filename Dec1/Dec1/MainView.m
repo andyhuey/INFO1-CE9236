@@ -7,17 +7,47 @@
 //
 
 #import "MainView.h"
+#import "MainViewController.h"
 
 @implementation MainView
 
+- (void) btnRunClick: (id) sender {
+    [mainViewController startLife];
+}
+
+-(void)initBtnRun {
+    btnRun = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+    CGRect b = self.bounds;
+    CGSize s = CGSizeMake(180, 30);	//size of button
+    
+    btnRun.frame = CGRectMake(
+                              (b.size.width - s.width) / 2,
+                              (b.size.height - s.height - 10),
+                              s.width,
+                              s.height
+                              );
+    [btnRun setTitle: @"Run Life" forState: UIControlStateNormal];
+    
+    [btnRun addTarget: self
+               action: @selector(btnRunClick:)
+     forControlEvents: UIControlEventTouchUpInside
+     ];        
+    [self addSubview: btnRun];
+}
+
 - (id)initWithFrame:(CGRect)frame
+         controller: (MainViewController *) c
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        //self.backgroundColor = [UIColor whiteColor];
+        //[self initBtnRun];
+        mainViewController = c;
     }
     return self;
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
