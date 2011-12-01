@@ -12,7 +12,13 @@
 @implementation MainView
 
 - (void) btnRunClick: (id) sender {
-    [mainViewController startLife];
+    NSLog(@"in btnRunClick");
+    [mainViewController startAnimation];
+    [btnRun setEnabled:NO];
+}
+
+-(void) enableRunBtn {
+    [btnRun setEnabled:YES];
 }
 
 -(void)initBtnRun {
@@ -26,7 +32,7 @@
                               s.width,
                               s.height
                               );
-    [btnRun setTitle: @"Run Life" forState: UIControlStateNormal];
+    [btnRun setTitle: @"Start" forState: UIControlStateNormal];
     
     [btnRun addTarget: self
                action: @selector(btnRunClick:)

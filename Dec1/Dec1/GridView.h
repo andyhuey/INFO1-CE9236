@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+@class MainViewController;
 
-@interface GridView : UIView
+@interface GridView : UIView {
+    MainViewController *mainViewController;
+    double curr_t;
+    double max_t;
+}
+
+-(id) initWithFrame: (CGRect) frame controller: (MainViewController *) c; 
+-(void) initSpiro;
+-(void) move: (CADisplayLink *) displayLink;
 
 @end

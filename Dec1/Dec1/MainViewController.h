@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+
+@class MainView;
+@class GridView;
 
 @interface MainViewController : UIViewController {
-    
+    MainView *myMainView;
+    GridView *myGridView;
+    CADisplayLink *displayLink;
 }
 
--(void)startLife;
+-(void)startAnimation;
+-(void)stopAnimation;
 
 @end

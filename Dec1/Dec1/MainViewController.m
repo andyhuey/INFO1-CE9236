@@ -8,12 +8,21 @@
 
 #import "MainViewController.h"
 #import "MainView.h"
-//#import "GridView.h"
+#import "GridView.h"
 
 @implementation MainViewController
 
--(void)StartLife {
-    // TODO: stuff
+-(void)startAnimation {
+    NSLog(@"Starting animation...");
+    [myGridView initSpiro];
+	NSRunLoop *loop = [NSRunLoop currentRunLoop];
+	[displayLink addToRunLoop: loop forMode: NSDefaultRunLoopMode];
+}
+
+-(void)stopAnimation {
+	NSRunLoop *loop = [NSRunLoop currentRunLoop];
+    [displayLink removeFromRunLoop: loop forMode:NSDefaultRunLoopMode];
+    [myMainView enableRunBtn];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,26 +48,36 @@
 - (void)loadView
 {
     CGRect frame = [UIScreen mainScreen].applicationFrame;
-    MainView *myMainView = [[MainView alloc] initWithFrame: frame];
+    myMainView = [[MainView alloc] initWithFrame: frame controller:self];
 	self.view = myMainView;    
     self.view.backgroundColor = [UIColor whiteColor];
     [myMainView initBtnRun];
 
+    // put the grid view in the main view.
+    CGSize sGV = CGSizeMake(300, 300);
+    CGRect gvFrame = CGRectMake(10, 10, sGV.width, sGV.height);
+    myGridView = [[GridView alloc] initWithFrame: gvFrame controller:self];
+    [myMainView addSubview:myGridView];
 }
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    displayLink = [CADisplayLink 
+                   displayLinkWithTarget: myGridView
+                                selector: @selector(move:) ];
+    
+	displayLink.frameInterval = 2;
 }
-*/
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    myGridView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

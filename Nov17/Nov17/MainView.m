@@ -222,6 +222,7 @@ long LCM(long a, long b);
     double t = 0;
     double dt = M_PI / iter;
     double max_t = 2 * M_PI * B / GCD(A, B);
+    NSLog(@"max_t = %f", max_t);
     double x1 = cx + X(t, A, B, C);
     double y1 = cy + Y(t, A, B, C);
     CGContextMoveToPoint(c, x1, y1);

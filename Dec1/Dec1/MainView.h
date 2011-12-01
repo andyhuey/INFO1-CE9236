@@ -15,6 +15,7 @@
 }
 
 -(void)initBtnRun;
+-(void)enableRunBtn;
 - (id) initWithFrame: (CGRect) frame controller: (MainViewController *) c;
 
 @end
