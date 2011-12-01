@@ -11,7 +11,8 @@
 @class MainViewController;
 
 @interface GridView : UIView {
-    MainViewController *mainViewController;
+    MainViewController *mainViewCtrl;
+    //int A, B, C;
     double curr_t;
     double max_t;
 }

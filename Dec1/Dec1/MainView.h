@@ -11,9 +11,11 @@
 
 @interface MainView : UIView {
     MainViewController *mainViewController;
+    UISlider *slider_A, *slider_B, *slider_C;
     UIButton *btnRun;
 }
 
+-(void)initSlidersWithA: (int) a B: (int) b C: (int) c;
 -(void)initBtnRun;
 -(void)enableRunBtn;
 - (id) initWithFrame: (CGRect) frame controller: (MainViewController *) c;

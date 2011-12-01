@@ -12,17 +12,21 @@
 
 @implementation MainViewController
 
+@synthesize A, B, C, isAnimRunning;
+
 -(void)startAnimation {
     NSLog(@"Starting animation...");
     [myGridView initSpiro];
 	NSRunLoop *loop = [NSRunLoop currentRunLoop];
 	[displayLink addToRunLoop: loop forMode: NSDefaultRunLoopMode];
+    isAnimRunning = YES;
 }
 
 -(void)stopAnimation {
 	NSRunLoop *loop = [NSRunLoop currentRunLoop];
     [displayLink removeFromRunLoop: loop forMode:NSDefaultRunLoopMode];
     [myMainView enableRunBtn];
+    isAnimRunning = NO;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,6 +34,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        A = 80;
+        B = 14;
+        C = 30;
+        isAnimRunning = NO;
     }
     return self;
 }
@@ -52,11 +60,15 @@
 	self.view = myMainView;    
     self.view.backgroundColor = [UIColor whiteColor];
     [myMainView initBtnRun];
+    [myMainView initSlidersWithA:A B:B C:C];
 
     // put the grid view in the main view.
     CGSize sGV = CGSizeMake(300, 300);
     CGRect gvFrame = CGRectMake(10, 10, sGV.width, sGV.height);
     myGridView = [[GridView alloc] initWithFrame: gvFrame controller:self];
+    myGridView.layer.cornerRadius = 15;
+    myGridView.clipsToBounds = YES;
+
     [myMainView addSubview:myGridView];
 }
 

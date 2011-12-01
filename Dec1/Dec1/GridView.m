@@ -9,6 +9,11 @@
 #import "GridView.h"
 #import "MainViewController.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @implementation GridView
 
 double X(double t, double A, double B, double H);
@@ -21,8 +26,13 @@ long LCM(long a, long b);
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor yellowColor];
-        mainViewController = c;        
+        self.backgroundColor = UIColorFromRGB(0xfffacd);
+        //[UIColor yellowColor];
+        mainViewCtrl = c;        
+        //A = 80;
+        //B = 14;
+        //C = 30;
+
     }
     return self;
 }
@@ -37,7 +47,7 @@ long LCM(long a, long b);
     [self setNeedsDisplay];
     if (curr_t > max_t) {
         // stop it
-        [mainViewController stopAnimation];
+        [mainViewCtrl stopAnimation];
         //[self initSpiro];
     }
 }
@@ -56,25 +66,22 @@ long LCM(long a, long b);
     CGContextSetLineWidth(c, 1.0);
     CGContextBeginPath(c);
     
-    int A = 80;
-    int B = 14;
-    int C = 30;
     int iter = 100;
     
     int cx = w / 2;
     int cy = (h / 2); // + 25;
     double t = 0;
     double dt = M_PI / iter;
-    /*double*/ max_t = 2 * M_PI * B / GCD(A, B);
+    /*double*/ max_t = 2 * M_PI * mainViewCtrl.B / GCD(mainViewCtrl.A, mainViewCtrl.B);
     NSLog(@"max_t = %f", max_t);
-    double x1 = cx + X(t, A, B, C);
-    double y1 = cy + Y(t, A, B, C);
+    double x1 = cx + X(t, mainViewCtrl.A, mainViewCtrl.B, mainViewCtrl.C);
+    double y1 = cy + Y(t, mainViewCtrl.A, mainViewCtrl.B, mainViewCtrl.C);
     CGContextMoveToPoint(c, x1, y1);
     while (t <= max_t && t <= curr_t)
     {
         t += dt;
-        x1 = cx + X(t, A, B, C);
-        y1 = cy + Y(t, A, B, C);
+        x1 = cx + X(t, mainViewCtrl.A, mainViewCtrl.B, mainViewCtrl.C);
+        y1 = cy + Y(t, mainViewCtrl.A, mainViewCtrl.B, mainViewCtrl.C);
         CGContextAddLineToPoint(c, x1, y1);
     }
     CGContextStrokePath(c);

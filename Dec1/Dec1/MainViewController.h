@@ -16,7 +16,12 @@
     MainView *myMainView;
     GridView *myGridView;
     CADisplayLink *displayLink;
+    int A, B, C;
+    BOOL isAnimRunning;
 }
+
+@property int A, B, C;
+@property BOOL isAnimRunning;
 
 -(void)startAnimation;
 -(void)stopAnimation;
