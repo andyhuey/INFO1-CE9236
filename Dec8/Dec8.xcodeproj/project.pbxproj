@@ -20,6 +20,10 @@
 		4948E754148C190700F49E1D /* Dec8Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4948E753148C190700F49E1D /* Dec8Tests.m */; };
 		4948E75F148C1B9400F49E1D /* ComicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4948E75E148C1B9400F49E1D /* ComicViewController.m */; };
 		4948E762148C1BAA00F49E1D /* ComicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4948E761148C1BAA00F49E1D /* ComicView.m */; };
+		49947812148C28E000A223E3 /* IssueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49947811148C28E000A223E3 /* IssueInfo.m */; };
+		49947817148C30E900A223E3 /* 21-skull.png in Resources */ = {isa = PBXBuildFile; fileRef = 49947816148C30E900A223E3 /* 21-skull.png */; };
+		4994781A148C344D00A223E3 /* 64-zap.png in Resources */ = {isa = PBXBuildFile; fileRef = 49947818148C344D00A223E3 /* 64-zap.png */; };
+		4994781B148C344D00A223E3 /* 114-balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49947819148C344D00A223E3 /* 114-balloon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,11 @@
 		4948E75E148C1B9400F49E1D /* ComicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicViewController.m; sourceTree = "<group>"; };
 		4948E760148C1BAA00F49E1D /* ComicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicView.h; sourceTree = "<group>"; };
 		4948E761148C1BAA00F49E1D /* ComicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicView.m; sourceTree = "<group>"; };
+		49947810148C28E000A223E3 /* IssueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueInfo.h; sourceTree = "<group>"; };
+		49947811148C28E000A223E3 /* IssueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueInfo.m; sourceTree = "<group>"; };
+		49947816148C30E900A223E3 /* 21-skull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "21-skull.png"; path = "imgs/21-skull.png"; sourceTree = "<group>"; };
+		49947818148C344D00A223E3 /* 64-zap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "64-zap.png"; path = "imgs/64-zap.png"; sourceTree = "<group>"; };
+		49947819148C344D00A223E3 /* 114-balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "114-balloon.png"; path = "imgs/114-balloon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +127,9 @@
 				4948E75E148C1B9400F49E1D /* ComicViewController.m */,
 				4948E760148C1BAA00F49E1D /* ComicView.h */,
 				4948E761148C1BAA00F49E1D /* ComicView.m */,
+				49947810148C28E000A223E3 /* IssueInfo.h */,
+				49947811148C28E000A223E3 /* IssueInfo.m */,
+				49947815148C30C400A223E3 /* imgs */,
 				4948E735148C190700F49E1D /* Supporting Files */,
 			);
 			path = Dec8;
@@ -151,6 +163,16 @@
 				4948E74F148C190700F49E1D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49947815148C30C400A223E3 /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				49947818148C344D00A223E3 /* 64-zap.png */,
+				49947819148C344D00A223E3 /* 114-balloon.png */,
+				49947816148C30E900A223E3 /* 21-skull.png */,
+			);
+			name = imgs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4948E739148C190700F49E1D /* InfoPlist.strings in Resources */,
+				49947817148C30E900A223E3 /* 21-skull.png in Resources */,
+				4994781A148C344D00A223E3 /* 64-zap.png in Resources */,
+				4994781B148C344D00A223E3 /* 114-balloon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +288,7 @@
 				4948E73F148C190700F49E1D /* MyAppDelegate.m in Sources */,
 				4948E75F148C1B9400F49E1D /* ComicViewController.m in Sources */,
 				4948E762148C1BAA00F49E1D /* ComicView.m in Sources */,
+				49947812148C28E000A223E3 /* IssueInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +450,7 @@
 				4948E759148C190700F49E1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4948E75A148C190700F49E1D /* Build configuration list for PBXNativeTarget "Dec8Tests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +459,7 @@
 				4948E75C148C190700F49E1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

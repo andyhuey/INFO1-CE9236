@@ -11,7 +11,7 @@
 
 @implementation ComicViewController
 
-@synthesize title, issueNos, issueImgs;
+@synthesize fullTitle, issueInfo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,14 +23,16 @@
 }
 
 -(id) initWithTitle:(NSString *)t 
-           issueNos:(NSArray *) issNo 
-          issueImgs:(NSArray *) issImg {
+          fullTitle:(NSString *)ft 
+           tabImage:(NSString *)img
+          issueInfo:(NSArray *) issInfo {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         // Custom initialization
+        self.tabBarItem.image = [UIImage imageNamed:img];
         self.title = t;
-        self.issueNos = issNo;
-        self.issueImgs = issImg;
+        self.fullTitle = ft;
+        self.issueInfo = issInfo;
     }
     return self;
 

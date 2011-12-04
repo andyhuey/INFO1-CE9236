@@ -7,6 +7,8 @@
 //
 
 #import "MyAppDelegate.h"
+#import "ComicViewController.h"
+#import "IssueInfo.h"
 
 @implementation MyAppDelegate
 
@@ -16,6 +18,44 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    ComicViewController *cvc1 = [[ComicViewController alloc] 
+        initWithTitle:@"Crime"
+            fullTitle:@"Crime SuspenStories" 
+             tabImage:@"21-skull.png"
+            issueInfo: [NSArray arrayWithObjects:
+                        [[IssueInfo alloc] initWithImg:@"todo" issueNo:1],
+                        [[IssueInfo alloc] initWithImg:@"todo" issueNo:2],
+                        [[IssueInfo alloc] initWithImg:@"todo" issueNo:3],
+                        nil
+                        ]];
+
+    ComicViewController *cvc2 = [[ComicViewController alloc] 
+         initWithTitle:@"More Fun"
+             fullTitle:@"More Fun Comics" 
+             tabImage:@"114-balloon.png"
+         issueInfo: [NSArray arrayWithObjects:
+                     [[IssueInfo alloc] initWithImg:@"todo" issueNo:1],
+                     [[IssueInfo alloc] initWithImg:@"todo" issueNo:2],
+                     [[IssueInfo alloc] initWithImg:@"todo" issueNo:3],
+                     nil
+                     ]];
+
+    ComicViewController *cvc3 = [[ComicViewController alloc] 
+         initWithTitle:@"Whiz"
+         fullTitle:@"Whiz Comics" 
+         tabImage:@"64-zap.png"
+         issueInfo: [NSArray arrayWithObjects:
+                     [[IssueInfo alloc] initWithImg:@"todo" issueNo:1],
+                     [[IssueInfo alloc] initWithImg:@"todo" issueNo:2],
+                     [[IssueInfo alloc] initWithImg:@"todo" issueNo:3],
+                     nil
+                     ]];
+    
+    UITabBarController *tbc = [[UITabBarController alloc] init];
+    self.window.rootViewController = tbc;
+    tbc.viewControllers = [NSArray arrayWithObjects: cvc1, cvc2, cvc3, nil];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

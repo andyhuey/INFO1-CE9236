@@ -9,16 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface ComicViewController : UIViewController {
-    NSString *title;
-    NSArray *issueNos;
-    NSArray *issueImgs;
+    NSString *fullTitle;
+    NSArray *issueInfo;
 }
 
 -(id) initWithTitle:(NSString *)t 
-           issueNos:(NSArray *) issNo 
-          issueImgs:(NSArray *) issImg;
+          fullTitle:(NSString *)ft
+           tabImage:(NSString *)img
+          issueInfo:(NSArray *) issInfo; 
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, retain) NSArray *issueNos;
-@property (nonatomic, retain) NSArray *issueImgs;
+@property (nonatomic, copy) NSString *fullTitle;
+@property (nonatomic, retain) NSArray *issueInfo;
 @end
