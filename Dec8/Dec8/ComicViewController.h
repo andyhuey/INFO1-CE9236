@@ -7,17 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+@class IssueInfo;
 
 @interface ComicViewController : UIViewController {
     NSString *fullTitle;
-    NSArray *issueInfo;
+    NSString *tabImageName;
+    IssueInfo *issueInfo;
 }
 
 -(id) initWithTitle:(NSString *)t 
           fullTitle:(NSString *)ft
            tabImage:(NSString *)img
-          issueInfo:(NSArray *) issInfo; 
+          issueInfo:(IssueInfo *) issInfo; 
+
+- (void) nextIssue;
 
 @property (nonatomic, copy) NSString *fullTitle;
-@property (nonatomic, retain) NSArray *issueInfo;
+@property (nonatomic, copy) NSString *tabImageName;
+@property (nonatomic, retain) IssueInfo *issueInfo;
 @end

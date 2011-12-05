@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ComicViewController;
 
-@interface MyAppDelegate : UIResponder <UIApplicationDelegate>
+@interface MyAppDelegate : UIResponder <UIApplicationDelegate> {
+    NSArray *issues[3];
+    NSMutableArray *visited[3];
+    ComicViewController *cvc[3];
+}
 
 @property (strong, nonatomic) UIWindow *window;
+
+- (void) nextIssue:(NSString *)title;
 
 @end

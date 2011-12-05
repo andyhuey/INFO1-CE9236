@@ -14,52 +14,114 @@
 
 @synthesize window = _window;
 
+-(void)initIssues {
+    self->issues[0] = [NSArray arrayWithObjects:
+        [[IssueInfo alloc] initWithImg:@"todo" issueNo:1],
+        [[IssueInfo alloc] initWithImg:@"todo" issueNo:2],
+        [[IssueInfo alloc] initWithImg:@"todo" issueNo:3],
+        nil
+        ];
+    
+    self->issues[1] = [NSArray arrayWithObjects:
+        [[IssueInfo alloc] initWithImg:@"todo" issueNo:1],
+        [[IssueInfo alloc] initWithImg:@"todo" issueNo:2],
+        [[IssueInfo alloc] initWithImg:@"todo" issueNo:3],
+        nil
+        ];
+    
+    self->issues[2] = [NSArray arrayWithObjects:
+        [[IssueInfo alloc] initWithImg:@"todo" issueNo:1],
+        [[IssueInfo alloc] initWithImg:@"todo" issueNo:2],
+        [[IssueInfo alloc] initWithImg:@"todo" issueNo:3],
+        nil
+        ];
+}
+
+-(void)initControllers {
+    self->cvc[0] = [[ComicViewController alloc] 
+         initWithTitle:@"Crime"
+         fullTitle:@"Crime SuspenStories" 
+         tabImage:@"21-skull.png"
+         issueInfo: [issues[0] objectAtIndex:0]];
+    
+    self->cvc[1] = [[ComicViewController alloc] 
+         initWithTitle:@"More Fun"
+         fullTitle:@"More Fun Comics" 
+         tabImage:@"114-balloon.png"
+         issueInfo: [issues[1] objectAtIndex:0]];
+    
+    self->cvc[2] = [[ComicViewController alloc] 
+         initWithTitle:@"Whiz"
+         fullTitle:@"Whiz Comics" 
+         tabImage:@"64-zap.png"
+         issueInfo: [issues[2] objectAtIndex:0]];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    ComicViewController *cvc1 = [[ComicViewController alloc] 
-        initWithTitle:@"Crime"
-            fullTitle:@"Crime SuspenStories" 
-             tabImage:@"21-skull.png"
-            issueInfo: [NSArray arrayWithObjects:
-                        [[IssueInfo alloc] initWithImg:@"todo" issueNo:1],
-                        [[IssueInfo alloc] initWithImg:@"todo" issueNo:2],
-                        [[IssueInfo alloc] initWithImg:@"todo" issueNo:3],
-                        nil
-                        ]];
-
-    ComicViewController *cvc2 = [[ComicViewController alloc] 
-         initWithTitle:@"More Fun"
-             fullTitle:@"More Fun Comics" 
-             tabImage:@"114-balloon.png"
-         issueInfo: [NSArray arrayWithObjects:
-                     [[IssueInfo alloc] initWithImg:@"todo" issueNo:1],
-                     [[IssueInfo alloc] initWithImg:@"todo" issueNo:2],
-                     [[IssueInfo alloc] initWithImg:@"todo" issueNo:3],
-                     nil
-                     ]];
-
-    ComicViewController *cvc3 = [[ComicViewController alloc] 
-         initWithTitle:@"Whiz"
-         fullTitle:@"Whiz Comics" 
-         tabImage:@"64-zap.png"
-         issueInfo: [NSArray arrayWithObjects:
-                     [[IssueInfo alloc] initWithImg:@"todo" issueNo:1],
-                     [[IssueInfo alloc] initWithImg:@"todo" issueNo:2],
-                     [[IssueInfo alloc] initWithImg:@"todo" issueNo:3],
-                     nil
-                     ]];
+    [self initIssues];
+    [self initControllers];
+    
+    visited[0] = [NSMutableArray arrayWithObject: cvc[0]];
+    visited[1] = [NSMutableArray arrayWithObject: cvc[1]];
+    visited[2] = [NSMutableArray arrayWithObject: cvc[2]];
     
     UITabBarController *tbc = [[UITabBarController alloc] init];
     self.window.rootViewController = tbc;
-    tbc.viewControllers = [NSArray arrayWithObjects: cvc1, cvc2, cvc3, nil];
+    tbc.viewControllers = [NSArray arrayWithObjects: 
+        [[UINavigationController alloc] initWithRootViewController:cvc[0]], 
+        [[UINavigationController alloc] initWithRootViewController:cvc[1]], 
+        [[UINavigationController alloc] initWithRootViewController:cvc[2]], 
+        nil];
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    //self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+- (void) nextIssue:(NSString *)title {
+    int currTab;
+    if ([title isEqualToString:@"Crime"])
+        currTab = 0;
+    else if ([title isEqualToString:@"More Fun"])
+        currTab = 1;
+    else if ([title isEqualToString:@"Whiz"])
+        currTab = 2;
+    else
+        return;
+    NSLog(@"currTab = %d", currTab);
+    
+    NSArray *currIssues = issues[currTab];
+    NSMutableArray *currVisited = visited[currTab];
+    
+    UITabBarController *tbc = (UITabBarController *)self.window.rootViewController;
+	UINavigationController *nav = (UINavigationController *)tbc.selectedViewController;
+    
+	int i = nav.viewControllers.count;
+	if (i == currIssues.count) {
+		//We are currently on the last issue.
+		return;
+	}
+    NSLog(@"i = %d", i);
+    
+    ComicViewController* currCvc = [currVisited objectAtIndex: i-1];
+    
+	if (currVisited.count <= i) {
+		//This station is being visited for the first time.
+		[currVisited addObject:
+         [[ComicViewController alloc] initWithTitle:currCvc.tabBarItem.title 
+                                          fullTitle:currCvc.fullTitle 
+                                           tabImage:currCvc.tabImageName 
+                                          issueInfo:[currIssues objectAtIndex:i]]
+         ];
+	}
+	
+	[nav pushViewController: [currVisited objectAtIndex: i] animated: YES];
+ }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

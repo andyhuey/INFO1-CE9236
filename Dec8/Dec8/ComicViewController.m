@@ -7,12 +7,14 @@
 //
 
 #import "ComicViewController.h"
+#import "MyAppDelegate.h"
 #import "ComicView.h"
+#import "IssueInfo.h"
 
 @implementation ComicViewController
 
-@synthesize fullTitle, issueInfo;
-
+@synthesize fullTitle, issueInfo, tabImageName;
+/*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -20,22 +22,33 @@
         // Custom initialization
     }
     return self;
-}
+}*/
 
 -(id) initWithTitle:(NSString *)t 
           fullTitle:(NSString *)ft 
            tabImage:(NSString *)img
-          issueInfo:(NSArray *) issInfo {
+          issueInfo:(IssueInfo *) issInfo {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         // Custom initialization
-        self.tabBarItem.image = [UIImage imageNamed:img];
-        self.title = t;
+        self.tabImageName = img;
+        self.tabBarItem.image = [UIImage imageNamed:self.tabImageName];
+        self.tabBarItem.title = t;
+        self.navigationItem.title = [NSString stringWithFormat:@"%@ # %d", t, 
+                                     [issInfo.issueNo intValue]];
+        //self.title = [NSString stringWithFormat:@"%@ # %d", ft, 
+        //              [issInfo.issueNo intValue]];
         self.fullTitle = ft;
         self.issueInfo = issInfo;
     }
     return self;
 
+}
+
+- (void) nextIssue {
+	UIApplication *application = [UIApplication sharedApplication];
+	MyAppDelegate *appDelegate = application.delegate;
+	[appDelegate nextIssue:self.tabBarItem.title];
 }
 
 - (void)didReceiveMemoryWarning
