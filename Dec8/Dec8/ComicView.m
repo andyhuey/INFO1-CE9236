@@ -36,8 +36,16 @@
     NSString *s = //[NSString stringWithString: myViewCtrl.fullTitle];
     [NSString stringWithFormat:@"%@ # %d", myViewCtrl.fullTitle, 
      [myViewCtrl.issueInfo.issueNo intValue]];
-    CGPoint point = CGPointMake(0, 0);
+    CGPoint point = CGPointMake(10, 10);
     [s drawAtPoint: point withFont: font];
+    
+    if (![myViewCtrl.issueInfo.issueImg isEqualToString:@"todo"])
+    {
+        // display the image
+        UIImage *cover = [UIImage imageWithData:
+               [NSData dataWithContentsOfURL:[NSURL URLWithString:myViewCtrl.issueInfo.issueImg]]];
+        [cover drawAtPoint:CGPointMake(10, 40)];
+    }
 }
 
 @end

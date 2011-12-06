@@ -15,24 +15,28 @@
 @synthesize window = _window;
 
 -(void)initIssues {
+    // Crime
     self->issues[0] = [NSArray arrayWithObjects:
-        [[IssueInfo alloc] initWithImg:@"todo" issueNo:1],
-        [[IssueInfo alloc] initWithImg:@"todo" issueNo:2],
-        [[IssueInfo alloc] initWithImg:@"todo" issueNo:3],
+        [[IssueInfo alloc] initWithImg:@"http://images.comics.org//img/gcd/covers_by_id/36/w200/36565.jpg" issueNo:1],
+        [[IssueInfo alloc] initWithImg:@"http://images.comics.org//img/gcd/covers_by_id/36/w200/36566.jpg" issueNo:2],
+        [[IssueInfo alloc] initWithImg:@"http://images.comics.org//img/gcd/covers_by_id/36/w200/36567.jpg" issueNo:3],
+       [[IssueInfo alloc] initWithImg:@"http://images.comics.org//img/gcd/covers_by_id/36/w200/36568.jpg" issueNo:4],
+       [[IssueInfo alloc] initWithImg:@"http://images.comics.org//img/gcd/covers_by_id/36/w200/36569.jpg" issueNo:5],
+       [[IssueInfo alloc] initWithImg:@"http://images.comics.org//img/gcd/covers_by_id/36/w200/36570.jpg" issueNo:6],
         nil
         ];
-    
+    // More Fun
     self->issues[1] = [NSArray arrayWithObjects:
-        [[IssueInfo alloc] initWithImg:@"todo" issueNo:1],
-        [[IssueInfo alloc] initWithImg:@"todo" issueNo:2],
-        [[IssueInfo alloc] initWithImg:@"todo" issueNo:3],
+        [[IssueInfo alloc] initWithImg:@"http://images.comics.org//img/gcd/covers_by_id/10/w200/10687.jpg" issueNo:28],
+        [[IssueInfo alloc] initWithImg:@"http://images.comics.org//img/gcd/covers_by_id/10/w200/10688.jpg" issueNo:29],
+        [[IssueInfo alloc] initWithImg:@"http://images.comics.org//img/gcd/covers_by_id/10/w200/10689.jpg" issueNo:30],
         nil
         ];
-    
+    // Whiz
     self->issues[2] = [NSArray arrayWithObjects:
-        [[IssueInfo alloc] initWithImg:@"todo" issueNo:1],
-        [[IssueInfo alloc] initWithImg:@"todo" issueNo:2],
-        [[IssueInfo alloc] initWithImg:@"todo" issueNo:3],
+        [[IssueInfo alloc] initWithImg:@"http://images.comics.org//img/gcd/covers_by_id/38/w200/38270.jpg" issueNo:4],
+        [[IssueInfo alloc] initWithImg:@"http://images.comics.org//img/gcd/covers_by_id/38/w200/38271.jpg" issueNo:5],
+        [[IssueInfo alloc] initWithImg:@"http://images.comics.org//img/gcd/covers_by_id/38/w200/38272.jpg" issueNo:6],
         nil
         ];
 }
